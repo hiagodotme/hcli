@@ -1,0 +1,20 @@
+{
+  "name": "hcli",
+  "version": "1.0.0",
+  "bin": {
+    "hcli": "./index.js"
+  },
+  "description": "Facilita o uso de bibliotecas que não são globais no nodejs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hiago Silva Souza",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "clear": "^0.1.0",
+    "figlet": "^1.2.0",
+    "md5": "^2.2.1",
+    "npm": "^6.4.0"
+  }
+}

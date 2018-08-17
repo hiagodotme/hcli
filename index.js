@@ -2,11 +2,16 @@
 var npm = require('npm'),
     chalk = require('chalk'),
     package = require('./package.json'),
+    gip = require('get-installed-path'),
     clear = require('clear'),
     figlet = require('figlet');
+
+const localInstall = gip.getInstalledPathSync('@inncode/hcli', {local: false}).replace('index.js','');
+
 // protected packages
 var protected = [
     'npm',
+    'get-installed-path',
     'chalk',
     'clear',
     'figlet'
@@ -76,6 +81,7 @@ switch (cmd) {
     case '-i':
         npm.load(function (err) {
             if (err) return handlError(err);
+            npm.prefix = localInstall;
             npm.commands.install([process.argv[3]], function (er, data) {
                 if (er) return commandFailed(er)
                 // command succeeded, and data might have some info
@@ -86,6 +92,7 @@ switch (cmd) {
     case '-u':
         npm.load(function (err) {
             if (err) return handlError(err);
+            npm.prefix = localInstall;
             npm.commands.remove([process.argv[3]], function (er, data) {
                 if (er) return commandFailed(er)
                 // command succeeded, and data might have some info

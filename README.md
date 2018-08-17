@@ -3,7 +3,7 @@ Install the not global nodejs packages for use in command-line.
 
 ## Installing
 ```sh
-npm install -g hcli
+npm install -g @inncode/hcli
 ```
 
 ## Example for use md5 command

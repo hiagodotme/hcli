@@ -1,5 +1,5 @@
 {
-  "name": "hcli",
+  "name": "@inncode/hcli",
   "version": "1.0.0",
   "bin": {
     "hcli": "./index.js"

@@ -13,7 +13,7 @@ hcli -i md5
 ```
 ### Then run the command
 ```sh
-hcli -r 'md5("crypt-message")'
+hcli -r "md5('crypt-message')"
 ```
 ## All Commands
 To list available commands, run the command below

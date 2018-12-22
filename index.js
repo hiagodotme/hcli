@@ -73,10 +73,14 @@ switch (cmd) {
         });
         break;
     case '-r':
-        var cmdCopy = process.argv.slice(3).join(' ');
-        var libName = cmdCopy.split("(")[0];
-        var posCommand = cmdCopy.split(libName)[1];
-        eval('console.log(require("' + libName + '")' + posCommand + ');');
+		try {
+			var cmdCopy = process.argv.slice(3).join(' ');
+			var libName = cmdCopy.split("(")[0];
+			var posCommand = cmdCopy.split(libName)[1];
+			eval('console.log(require("' + libName + '")' + posCommand + ');');
+		} catch(e) {
+			console.log(chalk.red('Error: ') + e);
+		}
         break;
     case '-i':
         npm.load(function (err) {
